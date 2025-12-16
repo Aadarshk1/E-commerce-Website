@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login - E-commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="header">
+    <a href="index.html"><img src="img/logo.jpg" class="logo" alt="Logo" width="250" height="80"></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop1.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">contact</a></li>
+        <li><a class="active" href="login.html">Login</a></li>
+        <li><a href="cart.html" id="l-bag"><i class="far fa-shopping-bag"></i></a></li>
+        <a href="#" id="close"><i class="far fa-times"></i></a>
+      </ul>
+    </div>
+  </section>
+
+  <main class="section-p1">
+    <div class="auth-container">
+      <div class="auth-form">
+        <h2>Sign in to your account</h2>
+        <form id="loginForm" action="login_action.html" method="get">
+          <input class="auth-input" type="email" name="email" placeholder="Email" required>
+          <input class="auth-input" type="password" name="password" placeholder="Password" required>
+          <button type="submit" class="auth-btn">Login</button>
+        </form>
+        <p style="margin-top:12px;">Don't have an account? <a href="signup.html">Sign up</a></p>
+      </div>
+
+      <div class="auth-note">
+        <h3>Need help signing in?</h3>
+        <p>If you forgot your password, contact support at +91 8877665544 or <a href="contact.html">use our contact form</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="section-p1">
+    <div class="col">
+      <h4>Contact</h4>
+      <span><strong>Address:</strong> Kolkata,West Bengal</span>
+      <span><strong>Phone:</strong> +91 8877665544</span>
+    </div>
+  </footer>
+</body>
+</html>

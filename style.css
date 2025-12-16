@@ -74,6 +74,26 @@ body {
   left: 0;
 }
 
+/* Ensure logo uses the same size site-wide as on the homepage */
+.logo {
+  /* responsive logo: scales with viewport but capped */
+  width: 20vw;
+  max-width: 350px;
+  min-width: 120px;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+@media (max-width: 799px) {
+  .logo {
+    width: 35vw;
+    max-width: 180px;
+    min-width: 80px;
+    max-height: 64px;
+  }
+}
+
 #navbar {
   display: flex;
   align-items: center;
@@ -594,7 +614,16 @@ footer .copyright {
   white-space: nowrap;
 }
 #cart table img {
-  width: 70px;
+  width: 140px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 799px) {
+  #cart table img {
+    width: 90px;
+  }
 }
 
 /*-------------------------------------------------start media Query------------------------------------------------------------ */
@@ -676,5 +705,233 @@ footer .copyright {
   }
   #banner3 .bannerbox {
     width: 28px;
+  }
+}
+
+/* ---------------------------------------------------------------- About page styles ---------------------------------------------------------------- */
+.about-hero, #hero.about-hero {
+  background-image: url("img/about/banner.png");
+  height: 60vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.about-hero h4,
+.about-hero h2,
+.about-hero p {
+  color: #fff;
+}
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 40px 80px;
+  flex-wrap: wrap;
+}
+.about-image {
+  flex: 1 1 420px;
+  min-width: 280px;
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 70vh;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.about-content {
+  flex: 1 1 420px;
+  min-width: 280px;
+}
+
+.mission-box {
+  background: #f7faf7;
+  padding: 30px;
+  border-radius: 8px;
+  width: 48%;
+}
+.section-m1 {
+  display: flex;
+  gap: 20px;
+  padding: 40px 80px;
+  flex-wrap: wrap;
+}
+
+.team-container {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.team-member {
+  text-align: center;
+  width: 200px;
+}
+.team-member img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 799px) {
+  .about-container {
+    flex-direction: column;
+    padding: 20px 40px;
+  }
+  .mission-box {
+    width: 100%;
+  }
+  .about-hero {
+    height: 50vh;
+    padding: 20px 40px;
+  }
+  .team-member {
+    width: 45%;
+  }
+}
+
+/* Contact page styles */
+.contact-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px 80px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.contact-form {
+  flex: 1 1 520px;
+  min-width: 280px;
+}
+.contact-form h2 {
+  margin-bottom: 16px;
+}
+.contact-form .input-row {
+  display: flex;
+  gap: 16px;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e2e9e1;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.contact-form button.normalmk {
+  background-color: #088178;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.contact-info {
+  flex: 1 1 360px;
+  min-width: 260px;
+  background: #f7faf7;
+  padding: 20px;
+  border-radius: 8px;
+}
+.contact-info {
+  text-align: left;
+}
+.contact-info h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+.contact-info h3 {
+  font-size: 16px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+}
+.contact-info p {
+  text-align: left;
+  color: #465b52;
+  margin-bottom: 8px;
+}
+.map-placeholder img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+@media (max-width: 799px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 20px 40px;
+  }
+  .contact-info {
+    order: 2;
+  }
+  .contact-form {
+    order: 1;
+  }
+  .contact-form .input-row {
+    flex-direction: column;
+  }
+}
+
+/* Auth (login / signup) styles */
+.auth-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px 80px;
+  flex-wrap: wrap;
+}
+.auth-form {
+  flex: 1 1 420px;
+  min-width: 280px;
+}
+.auth-note {
+  flex: 1 1 320px;
+  min-width: 260px;
+  background: #f7faf7;
+  padding: 20px;
+  border-radius: 8px;
+}
+.auth-form h2 {
+  margin-bottom: 16px;
+}
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e9e1;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.auth-row {
+  display: flex;
+  gap: 12px;
+}
+.auth-btn {
+  background-color: #088178;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+@media (max-width: 799px) {
+  .auth-container {
+    padding: 20px 40px;
+    flex-direction: column;
+  }
+  .auth-row {
+    flex-direction: column;
   }
 }

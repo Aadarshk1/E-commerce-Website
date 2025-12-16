@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login Result - E-commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="header">
+    <a href="index.html"><img src="img/logo.jpg" class="logo" alt="Logo" width="200" height="80"></a>
+  </section>
+  <main class="section-p1">
+    <div style="padding:40px 80px;">
+      <h2>Login attempt</h2>
+      <div id="result"></div>
+      <p style="margin-top:16px;"><a href="login.html">Back to login</a> · <a href="index.html">Home</a></p>
+    </div>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const container = document.getElementById('result');
+    if (!params.toString()) {
+      container.innerHTML = '<p>No login data received.</p>';
+    } else {
+      const email = params.get('email') || '(none)';
+      container.innerHTML = '<p><strong>Email:</strong> ' + email + '</p><p>Note: This is a frontend-only demo — no authentication performed.</p>';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Message Sent - E-commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="header">
+    <a href="index.html"><img src="img/logo.jpg" class="logo" alt="Logo" width="250" height="80"></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop1.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="contact.html">contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="cart.html" id="l-bag"><i class="far fa-shopping-bag"></i></a></li>
+        <a href="#" id="close"><i class="far fa-times"></i></a>
+      </ul>
+    </div>
+  </section>
+
+    <section id="hero" class="about-hero">
+    <h4>Thanks!</h4>
+    <h2>Message Received</h2>
+    <p>We received your message — here is what you sent.</p>
+  </section>
+
+  <main class="section-p1">
+    <div class="submission-summary" style="padding:40px 80px;">
+      <h3>Submission details</h3>
+      <div id="summary"></div>
+      <p style="margin-top:16px;"><a href="contact.html">Send another message</a> · <a href="index.html">Return home</a></p>
+    </div>
+  </main>
+
+  <footer class="section-p1">
+    <div class="col">
+      <h4>Contact</h4>
+      <span><strong>Address:</strong> Kolkata,West Bengal</span>
+      <span><strong>Phone:</strong> +91 8877665544</span>
+      <span><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</span>
+    </div>
+  </footer>
+
+  <script>
+    // Read form fields from query string and display them.
+    const params = new URLSearchParams(window.location.search);
+    const fields = ['name','email','subject','message'];
+    const container = document.getElementById('summary');
+    if (!params.toString()) {
+      container.innerHTML = '<p>No form data received. If you submitted the form, try using method="get" on the form.</p>';
+    } else {
+      const list = document.createElement('dl');
+      fields.forEach(f => {
+        if (params.has(f)) {
+          const dt = document.createElement('dt');
+          dt.textContent = f.charAt(0).toUpperCase() + f.slice(1);
+          const dd = document.createElement('dd');
+          dd.textContent = params.get(f);
+          list.appendChild(dt);
+          list.appendChild(dd);
+        }
+      });
+      container.appendChild(list);
+    }
+  </script>
+</body>
+</html>
